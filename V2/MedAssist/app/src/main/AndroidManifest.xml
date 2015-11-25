@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.group16.medassist">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PrescriptionsActivity"
+            android:label="Prescriptions"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".NewPrescription"
+            android:label="New Prescription"
+            android:parentActivityName=".PrescriptionsActivity" />
+        <activity
+            android:name=".PrescriptionDetails"
+            android:label="Prescription Details"
+            android:launchMode="singleTop"
+            android:parentActivityName=".PrescriptionsActivity" />
+
+        <receiver android:name=".MedicationReminderReceiver" />
+
+        <activity
+            android:name=".DosagesActivity"
+            android:label="Dosages"
+            android:launchMode="singleTop"
+            android:parentActivityName=".PrescriptionDetails" />
+        <activity
+            android:name=".DosageDetails"
+            android:label="Dosage Details"
+            android:launchMode="singleTop"
+            android:parentActivityName=".DosagesActivity" />
+        <activity
+            android:name=".NewDosage"
+            android:label="New Dosage"
+            android:launchMode="singleTop"
+            android:parentActivityName=".DosagesActivity" />
+        <activity
+            android:name=".NewDosageReminder"
+            android:label="New Dosage Reminder"
+            android:launchMode="singleTop"
+            android:parentActivityName=".DosageDetails" />
+        <activity
+            android:name=".ContactsActivity"
+            android:label="Contacts"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".NewContact"
+            android:label="New Contact"
+            android:parentActivityName=".ContactsActivity" />
+
+    </application>
+
+</manifest>
