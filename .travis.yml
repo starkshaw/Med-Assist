@@ -1,4 +1,9 @@
 language: android
+
+branches:
+  only:
+    - stark
+
 android:
 	components:
 		- platform-tools
