@@ -1,34 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.group16.medassist" >
+    package="starkshaw.me.medassist" >
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-
-        <activity android:name=".MainActivity" android:label="@string/app_name">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".PrescriptionsActivity"
-            android:label="Prescriptions"
-            android:parentActivityName="com.group16.medassist.MainActivity">
-        </activity>
-
+            android:name=".SecondActivity"
+            android:label="@string/title_activity_second" />
         <activity
-            android:name=".NewPrescription"
-            android:label="New Prescription"
-            android:parentActivityName="com.group16.medassist.PrescriptionsActivity">
+            android:name=".ThirdActivity"
+            android:label="@string/title_activity_third" />
+        <activity
+            android:name=".FourthActivity"
+            android:label="@string/title_activity_fourth" >
         </activity>
-
+        <activity
+            android:name=".LogInActivity"
+            android:label="@string/title_activity_log_in" >
+        </activity>
+        <activity
+            android:name=".SignUpActivity"
+            android:label="@string/title_activity_sign_up" >
+        </activity>
     </application>
 
 </manifest>
