@@ -112,8 +112,8 @@ public class DosageDetails extends AppCompatActivity {
 
     public void deleteDosage(View v) {
         new AlertDialog.Builder(this)
-                .setTitle("Delete This Appointment")
-                .setMessage("Would you like to delete this appointment?")
+                .setTitle("Delete")
+                .setMessage("Are you sure you want to delete this dosage?")
                 .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         db = new DatabaseHelper(getApplicationContext());
@@ -134,7 +134,7 @@ public class DosageDetails extends AppCompatActivity {
     public void deleteAllDosageReminders(View v) {
         new AlertDialog.Builder(this)
                 .setTitle("Delete")
-                .setMessage("Are you sure you want to delete this dosage?")
+                .setMessage("Are you sure you want to delete all dosage reminders for this dosage?")
                 .setPositiveButton("delete", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         if(listAdapter == null) return;
