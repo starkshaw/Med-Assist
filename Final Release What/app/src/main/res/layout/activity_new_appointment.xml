@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:layout_height="match_parent"
+    tools:context="com.group16.medassist.NewAppointment">
+
+        <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+        android:layout_width="0dp"
+        android:layout_weight="2.73"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Doctors name"/>
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:id="@+id/appointmentsSpinner"
+                android:layout_gravity="bottom" />
+
+
+        </TableRow>
+        <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start time"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Time"
+        android:id="@+id/startTimeButton"
+        android:onClick="showStartTimePickerDialog"/>
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Time"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Time"
+        android:id="@+id/endTimeButton"
+        android:onClick="showEndTimePickerDialog"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="Cancel"
+            android:id="@+id/cancelAddAppointment"
+            android:onClick="cancelSaveAppointment" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="Add Appointment"
+            android:id="@+id/addAppointment"
+            android:onClick="saveAppointmentToDB" />
+    </LinearLayout>
+
+</LinearLayout>
