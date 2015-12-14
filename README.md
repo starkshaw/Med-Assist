@@ -1,5 +1,4 @@
 # Med-Assist
-howaya
 This repository is designed for Team Project – Med-Assist.
 
 ###Travis CI Test Result
