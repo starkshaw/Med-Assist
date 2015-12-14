@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.group16.medassist">
+    package="com.group16.medassist" >
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
@@ -23,16 +23,15 @@
     android:icon="@drawable/ic_launcher"
     android:label="@string/app_name"
     android:theme="@style/AppTheme">
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -52,7 +51,6 @@
             android:label="Prescription Details"
             android:launchMode="singleTop"
             android:parentActivityName=".PrescriptionsActivity" />
-
         <activity
             android:name=".DosagesActivity"
             android:label="Dosages"
@@ -84,38 +82,48 @@
         <activity
             android:name=".AppointmentsActivity"
             android:label="Appointments"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".NewAppointment"
             android:label="New Appointment"
-            android:parentActivityName=".AppointmentsActivity"/>
-
+            android:parentActivityName=".AppointmentsActivity" />
         <activity
             android:name=".MapsActivity"
             android:label="Maps Activity"
-            android:parentActivityName=".MainActivity"/>
-
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ContactsDetails"
             android:label="Contact Details"
             android:launchMode="singleTop"
-            android:parentActivityName=".ContactsActivity"/>
+            android:parentActivityName=".ContactsActivity" />
+        <activity
+            android:name=".SendMailActivity"
+            android:label="Send Mail"
+            android:parentActivityName=".AppointmentsActivity"
+            />
 
-        <receiver android:name=".MedicationReminderReceiver" android:enabled="true"/>
-        <receiver android:name=".MedicationReminderActionReceiver$Skip" android:enabled="true"/>
-        <receiver android:name=".MedicationReminderActionReceiver$Take" android:enabled="true"/>
+
+
+        <receiver
+            android:name=".MedicationReminderReceiver"
+            android:enabled="true" />
+        <receiver
+            android:name=".MedicationReminderActionReceiver$Skip"
+            android:enabled="true" />
+        <receiver
+            android:name=".MedicationReminderActionReceiver$Take"
+            android:enabled="true" />
 
         <meta-data
-        android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" />
-
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAF5oCnQonKnG0ZMHYNcp6ba9eBWO-oWZA" />
-
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.group16.medassist.ContactsActivity" />
+
 
     </application>
 

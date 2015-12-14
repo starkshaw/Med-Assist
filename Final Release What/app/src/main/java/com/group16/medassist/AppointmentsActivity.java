@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-public class AppointmentsActivity extends AppCompatActivity {
+public class AppointmentsActivity extends AppCompatActivity{
 
     ListView listView;
     DatabaseHelper db;
@@ -39,9 +39,7 @@ public class AppointmentsActivity extends AppCompatActivity {
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    //Prescription prescription = (Prescription) listView.getItemAtPosition(position);
                     final Appointment appointment = (Appointment) listView.getItemAtPosition(position);
-                    //Toast.makeText(getApplicationContext(),"Position :" + itemPosition + "  Start Time : " + appointment.startTime, Toast.LENGTH_LONG).show();
 
                     new AlertDialog.Builder(AppointmentsActivity.this)
                             .setTitle("Delete")
@@ -56,12 +54,17 @@ public class AppointmentsActivity extends AppCompatActivity {
                                     finish();
                                     startActivity(intent);
                                     dialog.dismiss();
+
                                 }
                             })
                             .setNegativeButton("NO", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {dialog.dismiss();}
                             })
                             .create().show();
+                    /*Intent intent = new Intent(getApplicationContext(), ContactsDetails.class);
+                    intent.putExtra("appointment_id", appointment.id);
+                    startActivity(intent);*/
+
                 }
             });
         }  else {
@@ -76,7 +79,7 @@ public class AppointmentsActivity extends AppCompatActivity {
             // add text about no prescriptions
             TextView text = new TextView(this);
             text.setText("No Appointments");
-            text.setTextColor(Color.BLACK);
+            text.setTextColor(Color.RED);
             text.setTextSize(15);
             topView.addView(text);
         }
@@ -100,14 +103,21 @@ public class AppointmentsActivity extends AppCompatActivity {
                 .create().show();
     }
 
-    public void addAppointment(View v) {
+    public void addAppointment(View v)
+    {
         DatabaseHelper db = new DatabaseHelper(getApplicationContext());
-        if(db.getNumberOfContacts() == 0) {
+        if(db.getNumberOfContacts() == 0)
+        {
             Toast.makeText(getApplicationContext(), "You must have contacts to add appointments", Toast.LENGTH_LONG).show();
             return;
         }
         db.closeDB();
         Intent intent = new Intent(this, NewAppointment.class);
+        startActivity(intent);
+    }
+    public void sendEmail(View v)
+    {
+        Intent intent = new Intent(this, SendMailActivity.class);
         startActivity(intent);
     }
 

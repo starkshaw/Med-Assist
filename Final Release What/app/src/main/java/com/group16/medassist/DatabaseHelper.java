@@ -670,6 +670,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Contact contact = new Contact(contact_id, contact_name, email, phone, address);
         return new Appointment(id, contact, startTime, endTime);
     }
+    public Appointment getAppointmentById(int id) {
+        String selectQuery = "SELECT  * FROM " +
+                TABLE_APPOINTMENTS + " WHERE " + KEY_ID + " = '" + id + "';";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(selectQuery, null);
+        if(c.moveToFirst()) return getAppointment(c);
+        else System.out.println("No appointment found for id " + id);
+        return null;
+    }
     public int updateAppointment(Appointment a) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
