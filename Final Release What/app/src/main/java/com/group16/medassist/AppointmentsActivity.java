@@ -115,10 +115,10 @@ public class AppointmentsActivity extends AppCompatActivity{
         Intent intent = new Intent(this, NewAppointment.class);
         startActivity(intent);
     }
-    public void sendEmail(View v)
+    /*public void sendEmail(View v)
     {
         Intent intent = new Intent(this, SendMailActivity.class);
         startActivity(intent);
-    }
+    }*/
 
 }

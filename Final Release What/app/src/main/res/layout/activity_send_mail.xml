@@ -5,19 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <!--<Spinner
-        android:layout_width="match_parent"
-        android:hint="enter email"
-        android:layout_weight="3"
-        android:layout_height="5dip"
-        android:id="@+id/emailSpinner"
-        />-->
+
+
     <EditText
-        android:ems="10"
-        android:hint="Enter gmail-id"
-        android:id="@+id/et_to"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/select_doctor"
+        android:text="Select a doctor below" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/emailSpinner"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp" />
+
     <EditText
         android:ems="10"
         android:hint="Enter Subject"
@@ -38,4 +40,5 @@
         android:layout_marginTop="5dip"
         android:layout_height="wrap_content"
         android:text="Send Mail"/>
+
 </LinearLayout>

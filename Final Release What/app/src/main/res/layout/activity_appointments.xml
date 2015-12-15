@@ -26,12 +26,12 @@
         android:text="DELETE ALL"
         android:id="@+id/deleteAllAppointmentsButton"
         android:onClick="deleteAllAppointments"/>
-        <Button
+        <!--<Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="EMAIL DOCTOR"
             android:id="@+id/SendMail"
-            android:onClick="sendEmail"/>
+            android:onClick="sendEmail"/>-->
 
     </LinearLayout>
 

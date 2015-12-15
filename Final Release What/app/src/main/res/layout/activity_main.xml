@@ -42,5 +42,22 @@
         android:layout_below="@+id/appointmentsButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EMAIL DOCTOR"
+        android:id="@+id/SendMail"
+        android:onClick="sendEmail"
+        android:layout_below="@+id/contactsButton"
+        android:layout_toLeftOf="@+id/prescriptionsButton"
+        android:layout_toStartOf="@+id/prescriptionsButton" />
+
+    <ImageButton
+        android:background="@drawable/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SendMailIcon"
+        android:layout_above="@+id/SendMail"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

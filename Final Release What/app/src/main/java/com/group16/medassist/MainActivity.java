@@ -8,7 +8,7 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.contactsButton).setOnClickListener(this);
         findViewById(R.id.mapsIcon).setOnClickListener(this);
         findViewById(R.id.mapsButton).setOnClickListener(this);
-
+        findViewById(R.id.SendMail).setOnClickListener(this);
+        findViewById(R.id.SendMailIcon).setOnClickListener(this);
         findViewById(R.id.contactsIcon).setOnClickListener(this);
         findViewById(R.id.prescriptionsIcon).setOnClickListener(this);
         findViewById(R.id.appointmentsIcon).setOnClickListener(this);
@@ -41,6 +42,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.mapsButton:
             case R.id.mapsIcon:
                 intent = new Intent(this, MapsActivity.class); break;
+
+            case R.id.SendMail:
+            case R.id.SendMailIcon:
+                intent = new Intent(this, SendMailActivity.class); break;
         }
         if(intent != null)
             startActivity(intent);

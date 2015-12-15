@@ -8,10 +8,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.List;
 import java.util.Properties;
 
 import javax.mail.Authenticator;
@@ -32,18 +35,35 @@ public class SendMailActivity extends AppCompatActivity implements OnClickListen
     EditText reciep, sub, msg;
     String rec, subject, textMessage;
 
+    Spinner contactsSpinner;
+    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_mail);
 
+        //spinner
+
+        contactsSpinner = (Spinner) findViewById(R.id.emailSpinner);
+        db = new DatabaseHelper(getApplicationContext());
+        List<Contact> contacts = db.getAllContacts();
+        db.close();
+        ArrayAdapter<Contact> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, contacts);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        contactsSpinner.setAdapter(adapter);
+        contactsSpinner.setSelection(0);
+
+        // end spinner
+
         context = this;
 
 
 
+
+
         Button login = (Button) findViewById(R.id.btn_submit);
-        reciep = (EditText) findViewById(R.id.et_to);
+        //reciep = (EditText) findViewById(R.id.et_to);
         sub = (EditText) findViewById(R.id.et_sub);
         //sub = ((EditText)findViewById(R.id.emailSpinner)).getText().toString();
         msg = (EditText) findViewById(R.id.et_text);
@@ -54,9 +74,14 @@ public class SendMailActivity extends AppCompatActivity implements OnClickListen
 
     @Override
     public void onClick(View v) {
-        rec = reciep.getText().toString();
+        //rec = reciep.getText().toString();
+
+        rec = ((Contact)contactsSpinner.getSelectedItem()).email;
+        System.out.println("Recipient " + rec);
+
+
         subject = sub.getText().toString();
-        textMessage = "I'm sorry but I'll have to cancel our appointment.";
+        textMessage = msg.getText().toString();//
 
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com");
@@ -72,7 +97,6 @@ public class SendMailActivity extends AppCompatActivity implements OnClickListen
         });
 
         pdialog = ProgressDialog.show(context, "", "Sending Mail...", true);
-
         RetrieveFeedTask task = new RetrieveFeedTask();
         task.execute();
     }
@@ -101,7 +125,7 @@ public class SendMailActivity extends AppCompatActivity implements OnClickListen
         @Override
         protected void onPostExecute(String result){
             pdialog.dismiss();
-            reciep.setText("");
+           // reciep.setText("");
             msg.setText("");
             sub.setText("");
             Toast.makeText(getApplicationContext(), "Message sent", Toast.LENGTH_LONG).show();
