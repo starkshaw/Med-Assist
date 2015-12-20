@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="10dp" android:weightSum="1" android:orientation="vertical" android:background="@drawable/background">
+    <ImageButton android:layout_width="188dp" android:layout_height="124dp" android:background="@drawable/appoin"
+        android:id="@+id/appointmentsIcon"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/appointmentsButton" android:id="@+id/appointmentsButton" android:layout_row="10" android:layout_column="0"
+        android:layout_below="@+id/appointmentsIcon"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/contactsIcon"
+        android:layout_toStartOf="@+id/contactsIcon" />
+    <ImageButton android:layout_width="117dp" android:layout_height="117dp" android:id="@+id/prescriptionsIcon" android:background="@drawable/pers" android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/appointmentsButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/appointmentsIcon"
+        android:layout_toEndOf="@+id/appointmentsIcon" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maps"
+        android:id="@+id/mapsButton"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/mapsIcon"
+        android:layout_alignLeft="@+id/mapsIcon"
+        android:layout_alignStart="@+id/mapsIcon"
+        android:layout_alignRight="@+id/SendMail"
+        android:layout_alignEnd="@+id/SendMail" />
+
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/prescriptionsButton" android:id="@+id/prescriptionsButton" android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/prescriptionsIcon"
+        android:layout_alignRight="@+id/prescriptionsIcon"
+        android:layout_alignEnd="@+id/prescriptionsIcon"
+        android:layout_toRightOf="@+id/appointmentsIcon"
+        android:layout_toEndOf="@+id/appointmentsIcon" />
+    <ImageButton android:layout_width="107dp" android:layout_height="107dp" android:background="@drawable/phone" android:layout_gravity="center_horizontal"
+        android:id="@+id/contactsIcon"
+        android:layout_below="@+id/prescriptionsButton"
+        android:layout_alignRight="@+id/prescriptionsIcon"
+        android:layout_alignEnd="@+id/prescriptionsIcon"
+        android:layout_toRightOf="@+id/appointmentsIcon"
+        android:layout_toEndOf="@+id/appointmentsIcon" />
+    <Button android:layout_width="133dp" android:layout_height="wrap_content" android:text="@string/contactsButton" android:id="@+id/contactsButton" android:layout_row="11" android:layout_column="0" android:layout_gravity="center_horizontal"
+        android:layout_alignTop="@+id/mapsButton"
+        android:layout_alignLeft="@+id/contactsIcon"
+        android:layout_alignStart="@+id/contactsIcon"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton android:background="@drawable/maps_icon" android:layout_width="107dp" android:layout_height="107dp" android:layout_gravity="center_horizontal"
+        android:id="@+id/mapsIcon"
+        android:layout_below="@+id/appointmentsButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/contactsIcon"
+        android:layout_toStartOf="@+id/contactsIcon" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EMAIL DOCTOR"
+        android:id="@+id/SendMail"
+        android:onClick="sendEmail"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/appointmentsButton"
+        android:layout_alignEnd="@+id/appointmentsButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:background="@drawable/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SendMailIcon"
+        android:layout_below="@+id/mapsButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/contactsButton"
+        android:layout_toStartOf="@+id/contactsButton" />
+
+</RelativeLayout>

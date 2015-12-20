@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MedAssist</string>
+
+    <string name="prescriptionsButton">Prescriptions</string>
+    <string name="appointmentsButton">Appointments</string>
+    <string name="contactsButton">Contacts</string>
+    <string name="newPrescriptionButton">Add</string>
+    <string name="deleteAllPrescriptionsButton">Delete All</string>
+
+</resources>
